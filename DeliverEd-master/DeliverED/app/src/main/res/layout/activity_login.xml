@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/gradient">
+
+    <TextView
+        android:id="@id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/whitelogo"
+        android:padding="20dp"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Sign in with Google"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/tv_1"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:background="@drawable/btn_1"
+        android:drawableLeft="@mipmap/google1"
+        android:textAllCaps="false"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:text="Sign up    |"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/btn_1"
+        android:drawableLeft="@mipmap/signup"
+        android:gravity="center"
+        android:layout_marginLeft="70dp"/>
+    <TextView
+        android:id="@+id/tv_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:text="Need help?"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/btn_1"
+        android:drawableLeft="@mipmap/help"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/tv_5"/>
+
+    <TextView
+        android:id="@id/tv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_6"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="By signing-in you agree to DeliverED's Conditions of Use and Sale. Please click to see our Privacy Notice."/>
+
+    <TextView
+        android:id="@id/tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 1.1"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"/>
+
+</RelativeLayout>

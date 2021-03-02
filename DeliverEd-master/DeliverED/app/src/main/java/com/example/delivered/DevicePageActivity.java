@@ -3,19 +3,28 @@ package com.example.delivered;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.okhttp.OkHttpClient;
+
+import java.io.IOException;
+
+
 public class DevicePageActivity extends AppCompatActivity {
 
     private TextView tv_7;
-    private TextView tv_8,tv_10,tv_9,tv_11;
-    private Button btn_1,btn_2;
-    private TextView tv_4,tv_5,tv_6;
+    private TextView tv_8, tv_10, tv_9, tv_11;
+    private Button btn_1, btn_2;
+    private TextView tv_4, tv_5, tv_6;
+
+    private APIService mAPIService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,7 @@ public class DevicePageActivity extends AppCompatActivity {
         tv_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Uploading photo is still building.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DevicePageActivity.this, "Uploading photo is still building.", Toast.LENGTH_SHORT).show();
             }
         });
         tv_7.setTypeface(tf);
@@ -39,17 +48,22 @@ public class DevicePageActivity extends AppCompatActivity {
         tv_10.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         tv_10.setTypeface(tf);
         btn_1 = findViewById(R.id.btn_1);
+
+
         btn_1.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Successfully open device!",Toast.LENGTH_SHORT).show();
+                Post post = new Post();
+                post.run(1);
+                Toast.makeText(DevicePageActivity.this, "Successfully open device!", Toast.LENGTH_SHORT).show();
             }
         });
         btn_2 = findViewById(R.id.btn_2);
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Successfully lock device!",Toast.LENGTH_SHORT).show();
+                Post post = new Post();
+                post.run(0);
+                Toast.makeText(DevicePageActivity.this, "Successfully lock device!", Toast.LENGTH_SHORT).show();
             }
         });
         btn_1.setTypeface(tf);
@@ -64,7 +78,7 @@ public class DevicePageActivity extends AppCompatActivity {
         tv_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Navigate to Home page.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DevicePageActivity.this, "Navigate to Home page.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DevicePageActivity.this, HomePageActivity.class);
                 startActivity(intent);
             }
@@ -73,7 +87,7 @@ public class DevicePageActivity extends AppCompatActivity {
         tv_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Navigate to Alerts page.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DevicePageActivity.this, "Navigate to Alerts page.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DevicePageActivity.this, AlertsActivity.class);
                 startActivity(intent);
             }
@@ -82,12 +96,11 @@ public class DevicePageActivity extends AppCompatActivity {
         tv_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DevicePageActivity.this,"Navigate to Account page.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DevicePageActivity.this, "Navigate to Account page.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DevicePageActivity.this, AccountActivity.class);
                 startActivity(intent);
             }
         });
-
 
     }
 }

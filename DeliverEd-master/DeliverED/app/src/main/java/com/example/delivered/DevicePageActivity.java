@@ -42,6 +42,8 @@ public class DevicePageActivity extends AppCompatActivity {
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Post post = new Post();
+                post.run(1);
                 Toast.makeText(DevicePageActivity.this,"Successfully open device!",Toast.LENGTH_SHORT).show();
             }
         });
@@ -49,6 +51,8 @@ public class DevicePageActivity extends AppCompatActivity {
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Post post = new Post();
+                post.run(0);
                 Toast.makeText(DevicePageActivity.this,"Successfully lock device!",Toast.LENGTH_SHORT).show();
             }
         });
